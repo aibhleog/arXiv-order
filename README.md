@@ -4,5 +4,5 @@ Some code I'm writing to pursue a theory about arXiv.
 Notes to get things to run:
 * Make sure that your `geckodriver` executable and Firefox application are both up to date
 * Make sure they they are also matching 64 bit or 32 bit (whatever is necessary for your computer)
-* Add the `geckodriver` executable location to your `$PATH` OR place it in `/usr/local/bin'
+* Add the `geckodriver` executable location to your `$PATH` OR place it in `/usr/local/bin`
 * If that doesn't work, also place a copy of it in your `/usr/bin/`
