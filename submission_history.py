@@ -1,10 +1,8 @@
 '''
-Script used to go through past postings and pull out the same information as "access-arXiv.py"
-NOTE: ignoring papers that are cross-listed.
+This script pulls the post information from "arXiv_posts.txt" and pulls up the
+posts to get the submission history.
 
-Reads in the table that already exists with data from previous dates, adds on the
-new data compiled in this script.  In case this script is run more than one per
-day, it also searches for duplicates and drops them.
+Future additions: would love to include author count & names (to track multiple submissions/year)
 '''
 
 from selenium import webdriver
@@ -35,7 +33,7 @@ driver = webdriver.Firefox()
 driver.get("https://arxiv.org/")
 
 # running through list of arXiv ID
-for arXiv_id in ['2005.03462']:
+for arXiv_id in arXiv_ids:
 	assert len(arXiv_id) == 10, f"Incorrect arXiv ID: {arXiv_id}."
 	
 	# locating search bar and inputting arXiv_id
