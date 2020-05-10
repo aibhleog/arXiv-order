@@ -1,7 +1,15 @@
+'''
+Script used to pull voting information from VoxCharta.org.
+Accessed via the tamu.voxcharta.org platform.
+'''
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from datetime import datetime
 import threading, time, getpass, sys, subprocess
+
+__author__ = 'Taylor Hutchison'
+__email__ = 'aibhleog@tamu.edu'
 
 # amount of time to wait
 timeit = input('\nTime before closing browser (in seconds):  ') # seconds
@@ -36,6 +44,9 @@ if logmein == True:
 	login.click()
 else:
 	driver.get("https://tamu.voxcharta.org/")
+
+
+
 
 
 # Wait until before closing browser (so we can see the "pycon" search)
