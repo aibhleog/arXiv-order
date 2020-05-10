@@ -1,6 +1,10 @@
 '''
 Script used to create table of recently posted papers -- sorted by posting order.
 NOTE: ignoring papers that are cross-listed.
+
+Reads in the table that already exists with data from previous dates, adds on the
+new data compiled in this script.  In case this script is run more than one per
+day, it also searches for duplicates and drops them.
 '''
 
 from selenium import webdriver
@@ -57,7 +61,7 @@ for item in items:
 # -- date/time submitted -- #
 # ------------------------- #
 '''items = posts.find_elements_by_tag_name("dd")
-# running through the posts to pull out arXiv ID
+# running through the posts to pull out submission date & time
 	[code to be added later]'''
 
 # ------------------------- #
