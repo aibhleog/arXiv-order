@@ -1,5 +1,6 @@
 '''
 Script used to create table of recently posted papers -- sorted by posting order.
+NOTE: ignoring papers that are cross-listed.
 '''
 
 from selenium import webdriver
@@ -16,7 +17,9 @@ __email__ = 'aibhleog@tamu.edu'
 # ------------------------ #
 # -- creating dataframe -- #
 # ------------------------ #
-df = pd.DataFrame({'id':[]})
+df_dtypes = {'order':int,'id':str,'date':str}
+main_df = pd.read_csv('arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table of data
+df = pd.DataFrame({'order':[],'id':[],'date':[]}) # dataframe to be created in script
 
 # ------------------------ #
 
@@ -24,11 +27,18 @@ df = pd.DataFrame({'id':[]})
 driver = webdriver.Firefox()
 driver.get("https://arxiv.org/list/astro-ph/new")
 
+date = driver.find_element_by_tag_name("h3") # expecting "New submissions for ___, DD dd YY"
+date = date.text.split(', ')[1] # just pulling out the date part
+print(f'Pulling arXiv post IDs for {date}')
+
 # pulling all of the New Submissions
 posts = driver.find_element_by_tag_name("dl")
-items = posts.find_elements_by_tag_name("dt")
 
-# running through the posts to pull out information
+
+# -- arXiv ID -- #
+# -------------- #
+items = posts.find_elements_by_tag_name("dt")
+# running through the posts to pull out arXiv ID
 i = 0
 for item in items:
 	print(f"{i}) ",end=' ')
@@ -39,8 +49,49 @@ for item in items:
 	print(arxiv_id)
 	
 	# adding value to dataframe
-	filler_df = pd.DataFrame({'id':[arxiv_id]})
+	filler_df = pd.DataFrame({'order':[int(i)],'id':[arxiv_id],'date':[date]})
 	df = df.append(filler_df,ignore_index=True)
 	i += 1
+# -------------- #
+
+# -- date/time submitted -- #
+# ------------------------- #
+'''items = posts.find_elements_by_tag_name("dd")
+# running through the posts to pull out arXiv ID
+	[code to be added later]'''
+
+# ------------------------- #
 
 driver.close()
+
+
+# -- saving dataframe -- #
+# ---------------------- #
+df = df.astype(df_dtypes) # to make sure column dtypes don't change
+main_df = main_df.astype(df_dtypes) # to make sure column dtypes don't change
+
+dates = set(main_df.date.values)
+if date in dates:
+	print(f'\nLength of main_df: \t\t\t\t\t{len(main_df)}')
+	print(f'Length of df: \t\t\t\t\t\t{len(df)}')
+	final_df = main_df.append(df,ignore_index=True)
+	
+	print(f'Length of combined df: \t\t\t\t\t{len(final_df)}')
+	final_df.drop_duplicates(inplace=True,subset='id')
+	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
+else:
+	final_df = main_df.append(df,ignore_index=True)
+	
+final_df.to_csv('arXiv_posts.txt',sep='\t',index=False)
+#df.to_csv('arXiv_posts.txt',sep='\t',index=False,float_format='%.5f')
+
+
+
+
+
+
+
+
+
+
+
