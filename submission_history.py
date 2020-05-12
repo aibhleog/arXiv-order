@@ -23,9 +23,10 @@ df_dtypes = {'order':int,'id':str,'date':str}
 main_df = pd.read_csv('arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table of data
 df = pd.DataFrame({'id':[],'v1':[],'v2':[]}) # dataframe to be created in script
 
+date = main_df.loc[len(main_df)-1,'date'] # latest date, assumes "access_arXiv.py" run first
 # arXiv IDs to run through
 # note that you can query specific posting dates or other sorting criteria
-arXiv_ids = main_df.id.values # list to run through
+arXiv_ids = main_df.query('date == {date}').id.values
 # ------------------------ #
 
 # opening browser & going to arXiv.org
@@ -66,7 +67,32 @@ time.sleep(2)
 driver.close()
 
 # saving dataframe
-#df.to_csv('arXiv_submission_history.txt',sep='\t',index=False)
+df_dtypes = {'id':str,'v1':str,'v2':str}
+sub_df = pd.read_csv('arXiv_submission_history.txt',sep='\t',dtype=df_dtypes) # reading in to add
+df = df.astype(df_dtypes) # to make sure column dtypes don't change
+
+# appending on data
+final_df = sub_df.append(df,ignore_index=True)
+
+# checking for duplicates
+ids = set(final_df.date.values) # creates 'set' of unique values 
+if len(ids) != len(final_df): # SO checking for duplicates added in to table
+	print(f'\nLength of sub_df: \t\t\t\t\t{len(sub_df)}')
+	print(f'Length of df: \t\t\t\t\t\t{len(df)}')
+	print(f'Length of combined df: \t\t\t\t\t{len(final_df)}')
+	final_df.drop_duplicates(inplace=True,subset='id')
+	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
+else:
+	print(f'No duplicates, check passed.')
+
+# saving table again
+final_df.to_csv('arXiv_submission_history.txt',sep='\t',index=False)
+
+
+
+
+
+
 
 
 

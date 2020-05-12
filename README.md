@@ -1,6 +1,11 @@
 # arXiv-order
 Some code I'm writing to pursue a theory about arXiv.
 
+Future plans
+-----------
+* Need to think of a way to automate this process (get it to run daily?)
+* Add in line to `access-VoxCharta.py` to read in new `VoxCharta_voting.txt` table to add to it
+
 Notes to get things to run:
 * Make sure that your `geckodriver` executable and Firefox application are both up to date
 * Make sure they they are also matching 64 bit or 32 bit (whatever is necessary for your computer)
