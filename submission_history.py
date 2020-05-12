@@ -26,7 +26,7 @@ df = pd.DataFrame({'id':[],'v1':[],'v2':[]}) # dataframe to be created in script
 date = main_df.loc[len(main_df)-1,'date'] # latest date, assumes "access_arXiv.py" run first
 # arXiv IDs to run through
 # note that you can query specific posting dates or other sorting criteria
-arXiv_ids = main_df.query('date == {date}').id.values
+arXiv_ids = main_df.query(f'date == "{date}"').id.values
 # ------------------------ #
 
 # opening browser & going to arXiv.org
@@ -75,7 +75,7 @@ df = df.astype(df_dtypes) # to make sure column dtypes don't change
 final_df = sub_df.append(df,ignore_index=True)
 
 # checking for duplicates
-ids = set(final_df.date.values) # creates 'set' of unique values 
+ids = set(final_df.id.values) # creates 'set' of unique values 
 if len(ids) != len(final_df): # SO checking for duplicates added in to table
 	print(f'\nLength of sub_df: \t\t\t\t\t{len(sub_df)}')
 	print(f'Length of df: \t\t\t\t\t\t{len(df)}')

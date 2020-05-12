@@ -120,8 +120,27 @@ time.sleep(timeit)
 driver.close()
 
 
-# saving main dataframe
-df.to_csv('VoxCharta_voting.txt',sep='\t',index=False)
+# saving dataframe
+df_dtypes = {'id':str,'total_votes':int,'vote_rate':str}
+sub_df = pd.read_csv('VoxCharta_voting.txt',sep='\t',dtype=df_dtypes) # reading in to add
+df = df.astype(df_dtypes) # to make sure column dtypes don't change
+
+# appending on data
+final_df = sub_df.append(df,ignore_index=True)
+
+# checking for duplicates
+ids = set(final_df.id.values) # creates 'set' of unique values 
+if len(ids) != len(final_df): # SO checking for duplicates added in to table
+	print(f'\nLength of sub_df: \t\t\t\t\t{len(sub_df)}')
+	print(f'Length of df: \t\t\t\t\t\t{len(df)}')
+	print(f'Length of combined df: \t\t\t\t\t{len(final_df)}')
+	final_df.drop_duplicates(inplace=True,subset='id')
+	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
+else:
+	print(f'No duplicates, check passed.')
+	
+# final version with added VoxCharta votes
+final_df.to_csv('VoxCharta_voting.txt',sep='\t',index=False)
 
 
 
