@@ -83,7 +83,7 @@ if len(ids) != len(final_df): # SO checking for duplicates added in to table
 	final_df.drop_duplicates(inplace=True,subset='id')
 	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
 else:
-	print(f'No duplicates, check passed.')
+	print(f'\nNo duplicates, check passed.')
 
 # saving table again
 final_df.to_csv('arXiv_submission_history.txt',sep='\t',index=False)

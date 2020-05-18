@@ -25,8 +25,11 @@ main_df = pd.read_csv('arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table o
 # total votes will be counted and, if possible, will track # of votes per day/week
 df = pd.DataFrame({'id':[],'total_votes':[],'vote_rate':[]}) # dataframe to be created in script
 
-# arXiv IDs to run through
-# note that you can query specific posting dates or other sorting criteria
+#df_dtypes = {'id':str,'total_votes':int,'vote_rate':str}
+#sub_df = pd.read_csv('VoxCharta_voting.txt',sep='\t',dtype=df_dtypes) # reading in to add
+# arXiv IDs to run through; note that you can query specific dates or other sorting criteria
+# for now, we compare the "arXiv_posts" to "VoxCharta_voting" to only look at ones
+# that haven't been logged.
 arXiv_ids = main_df.id.values # list to run through
 # ------------------------ #
 
@@ -137,7 +140,7 @@ if len(ids) != len(final_df): # SO checking for duplicates added in to table
 	final_df.drop_duplicates(inplace=True,subset='id')
 	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
 else:
-	print(f'No duplicates, check passed.')
+	print(f'\nNo duplicates, check passed.')
 	
 # final version with added VoxCharta votes
 final_df.to_csv('VoxCharta_voting.txt',sep='\t',index=False)
