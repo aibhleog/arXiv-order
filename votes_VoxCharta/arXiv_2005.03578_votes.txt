@@ -1,3 +1,2 @@
 cast_date	cast_time
-05/08/2020	1:54pm
 05/10/2020	10:51am
