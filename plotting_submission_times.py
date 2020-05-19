@@ -35,20 +35,27 @@ for i in range(4):
 plt.figure(figsize=(9,6))
 plt.gca().xaxis.set_major_formatter(md.DateFormatter('%m/%d'))
 
-plt.hist(times,bins=40,edgecolor='k',lw=2)
+plt.hist(times,bins=40,edgecolor='k',lw=2,color='#C37373')
 xlims = plt.xlim()
 plt.xlim(times[0],xlims[1])
 
 # making dictionary of cutoff times
-count = 0
-d0 = dt(2020, 5, 5, 18, 00, 00)
-colors = plt.cm.Blues(np.linspace(0,1,9))
+count = 1
+d0 = dt(2020, 5, 5, 13, 00, 00)
+colors = plt.cm.Blues(np.linspace(0,1,6))
 
 for d in [7,8,11,12,13,14,15,18]:
-	d1 = dt(2020, 5, d, 18, 00, 00)
-	plt.axvspan(d0,d1,zorder=0,color=colors[count+1])
+	d1 = dt(2020, 5, d, 13, 00, 00)
+	plt.axvspan(d0,d1,zorder=0,color=colors[count])
+	
+	# plotting hist of posts
+	
+	
 	d0 = d1
-	count += 1
+	
+	# consistent color-coding for the submission times
+	if count < 5: count += 1
+	else: count = 1
 
 
 plt.xlabel('day of the week')
