@@ -42,15 +42,12 @@ plt.xlim(times[0],xlims[1])
 # making dictionary of cutoff times
 count = 1
 d0 = dt(2020, 5, 5, 13, 00, 00)
-colors = plt.cm.Blues(np.linspace(0,1,6))
 
-for d in [7,8,11,12,13,14,15,18]:
+postings = [7,8,11,12,13,14,15,18,19,20]
+colors = plt.cm.Blues(np.linspace(0,1,6))
+for d in postings:
 	d1 = dt(2020, 5, d, 13, 00, 00)
 	plt.axvspan(d0,d1,zorder=0,color=colors[count])
-	
-	# plotting hist of posts
-	
-	
 	d0 = d1
 	
 	# consistent color-coding for the submission times
