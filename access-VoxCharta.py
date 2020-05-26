@@ -9,6 +9,8 @@ from datetime import datetime
 import threading, time, getpass, sys, subprocess
 import pandas as pd
 import numpy as np
+from datetime import datetime as dt
+from datetime import timedelta
 
 __author__ = 'Taylor Hutchison'
 __email__ = 'aibhleog@tamu.edu'
@@ -25,12 +27,20 @@ main_df = pd.read_csv('arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table o
 # total votes will be counted and, if possible, will track # of votes per day/week
 df = pd.DataFrame({'id':[],'total_votes':[],'vote_rate':[]}) # dataframe to be created in script
 
-#df_dtypes = {'id':str,'total_votes':int,'vote_rate':str}
-#sub_df = pd.read_csv('VoxCharta_voting.txt',sep='\t',dtype=df_dtypes) # reading in to add
 # arXiv IDs to run through; note that you can query specific dates or other sorting criteria
-# for now, we compare the "arXiv_posts" to "VoxCharta_voting" to only look at ones
-# that haven't been logged.
-arXiv_ids = main_df.id.values # list to run through
+#arXiv_ids = main_df.id.values # runs through full list
+# unless uncommented above, will be specifying to only look at posts within the last 2 weeks
+times = [dt.strptime(t,'%d %b %y') for t in main_df.date.values]
+times = np.asarray(times) # useful for the sorting we'll do 
+
+# reference date of 2 weeks ago
+ref_date = dt.now() - timedelta(days=14)
+print(f"Looking at posts from {dt.strftime(ref_date,'%a, %d %b %y')} and onwards.",end='\n\n')
+
+indexing = np.arange(len(main_df)) 
+indexing = indexing[times > ref_date] # only listing entries in the dataframe that are in the last 2 weeks
+
+arXiv_ids = main_df.loc[indexing,'id'].values # IDs of posts within the last 2 weeks!
 # ------------------------ #
 
 logmein = False # option to log into VoxCharta account (note: currently broken)
@@ -137,7 +147,7 @@ if len(ids) != len(final_df): # SO checking for duplicates added in to table
 	print(f'\nLength of sub_df: \t\t\t\t\t{len(sub_df)}')
 	print(f'Length of df: \t\t\t\t\t\t{len(df)}')
 	print(f'Length of combined df: \t\t\t\t\t{len(final_df)}')
-	final_df.drop_duplicates(inplace=True,subset='id')
+	final_df.drop_duplicates(inplace=True,subset='id',keep='last') # want most up-to-date #'s
 	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
 else:
 	print(f'\nNo duplicates, check passed.')
