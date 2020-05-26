@@ -80,7 +80,7 @@ if len(ids) != len(final_df): # SO checking for duplicates added in to table
 	print(f'\nLength of sub_df: \t\t\t\t\t{len(sub_df)}')
 	print(f'Length of df: \t\t\t\t\t\t{len(df)}')
 	print(f'Length of combined df: \t\t\t\t\t{len(final_df)}')
-	final_df.drop_duplicates(inplace=True,subset='id')
+	final_df.drop_duplicates(inplace=True,subset='id',keep='last') # want most up-to-date sub. history
 	print(f'Length of final_df after dropping id duplicates: \t{len(final_df)}')
 else:
 	print(f'\nNo duplicates, check passed.')
