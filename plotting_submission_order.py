@@ -118,14 +118,35 @@ for sub in times:
 		indexing.append(count)
 		
 	# if the date is Fri and it's after the Fri submission time
-	if sub.strftime('%a') == 'Fri' and sub.time() >= submission_time:
+	elif sub.strftime('%a') == 'Fri' and sub.time() >= submission_time:
 		diff = sub - dt.combine(sub_date,submission_time)
 		seconds_since_sub.append(float(diff.seconds))
 		time_since_sub.append(str(diff))
 		coloring.append(0)
 		indexing.append(count)
 		
+	# if the date is Saturday
+	elif sub.strftime('%a') == 'Sat':
+		friday = dt.combine(sub_date,submission_time) - timedelta(days=1)
+		diff = sub - friday
+		seconds_since_sub.append(float(diff.seconds))
+		time_since_sub.append(str(diff))
+		coloring.append(0)
+		indexing.append(count)
+	
+	# if the date is Sunday
+	elif sub.strftime('%a') == 'Sun':
+		friday = dt.combine(sub_date,submission_time) - timedelta(days=2)
+		diff = sub - friday
+		seconds_since_sub.append(float(diff.seconds))
+		time_since_sub.append(str(diff))
+		coloring.append(0)
+		indexing.append(count)
+		
+	#else: print(sub.strftime('%a'), sub.time() < submission_time, sub.time() >= submission_time)
 	count += 1
+
+print(f'\nFull length: {len(post_df)}, Final length: {len(indexing)}.')
 
 # adding 0.35 seconds to the zero second differences
 seconds_since_sub = np.asarray(seconds_since_sub)
