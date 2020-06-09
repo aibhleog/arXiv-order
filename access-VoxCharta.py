@@ -87,14 +87,20 @@ for arXiv_id in arXiv_ids:
 
 	# now, finding the search bar and searching for paper title
 	search = driver.find_element_by_id("searchbox")
+	search.clear()
 	search.send_keys(arXiv_id)
 	submit = driver.find_element_by_class_name("go")
 	submit.click()
 
 	time.sleep(5) # have to pause so the code doesn't try to search on previous page 	
 	# finding and clicking on result title
-	result = driver.find_element_by_tag_name("h3") # the title is the first (and only?) <h3>..</h3>
-	result.click()
+	try: result = driver.find_element_by_tag_name("h3") # the title is the first (and only?) <h3>..</h3>
+	except: 
+		time.sleep(4) # waiting a little longer for it to load	
+		result = driver.find_element_by_tag_name("h3") # the title is the first (and only?) <h3>..</h3
+	# this checks if there's anything to click on
+	try: result.click()
+	except: pass
 
 	time.sleep(5) # have to pause so the code doesn't try to search on previous page 
 	# finding total votes
