@@ -42,7 +42,7 @@ for arXiv_id in arXiv_ids:
 	search.send_keys(arXiv_id)
 	search.send_keys(Keys.RETURN)
 
-	time.sleep(3) # have to pause so the code doesn't try to search on previous page 
+	time.sleep(7) # have to pause so the code doesn't try to search on previous page 
 	print(f'\nFinding submission time for {arXiv_id}')
 	submission_history = driver.find_element_by_class_name("submission-history")
 	submission_history = submission_history.text # full submission history
