@@ -27,6 +27,7 @@ date = main_df.loc[len(main_df)-1,'date'] # latest date, assumes "access_arXiv.p
 # arXiv IDs to run through
 # note that you can query specific posting dates or other sorting criteria
 arXiv_ids = main_df.query(f'date == "{date}"').id.values
+
 # ------------------------ #
 
 # opening browser & going to arXiv.org
