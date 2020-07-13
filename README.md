@@ -4,7 +4,8 @@ Some code I'm writing to pursue a theory about arXiv.
 Future plans
 -----------
 * Need to think of a way to automate this process (get it to run daily?)
-* Add in line to `access-VoxCharta.py` to read in new `VoxCharta_voting.txt` table to add to it
+* In `access_VoxCharta.py`, need to add a `try...except` that flags when there is no search result returned for an arXiv number... because an alarming number of these recent posts don't seem to appear on VoxCharta.
+* Get code set up for Benty-Fields, too.
 
 Notes to get things to run:
 * Make sure that your `geckodriver` executable and Firefox application are both up to date
