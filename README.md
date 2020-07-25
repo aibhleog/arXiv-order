@@ -1,6 +1,8 @@
 # arXiv-order
 Some code I'm writing to pursue a theory about arXiv.
 
+## NOTE: VoxCharta will no longer pull arXiv postings on 31 December 2020. 
+
 Future plans
 -----------
 * Need to think of a way to automate this process (get it to run daily?)
