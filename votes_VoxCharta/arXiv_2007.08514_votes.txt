@@ -1,3 +1,2 @@
 cast_date	cast_time
 07/19/2020	4:54pm
-07/22/2020	9:59am
