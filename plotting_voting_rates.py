@@ -40,5 +40,5 @@ plt.xlabel('vote cast')
 plt.ylabel('vote order')
 
 plt.tight_layout()
-plt.savefig(max_vote_rate[:-4]+'.pdf')
+plt.savefig(max_vote_rate[:-4]+'.png')
 plt.close()

@@ -40,6 +40,10 @@ indexing = old_votes.query('total_votes > 0').index.values
 plt.figure()
 plt.scatter(old_votes.loc[indexing,'total_votes'],old_posts.loc[indexing,'order'],\
 		edgecolor='k',alpha=0.8)
+plt.text(0.97,0.11,f'Posts from {dt.strftime(times[0],"%d %b")} - {dt.strftime(ref_date,"%d %b %y")}',\
+		transform=plt.gca().transAxes,fontsize=15,ha='right')
+plt.text(0.97,0.05,f'Total posts with (votes>0) : {len(old_votes.loc[indexing])}',\
+		transform=plt.gca().transAxes,fontsize=15,ha='right')
 
 ylims = plt.ylim()
 plt.ylim(ylims[1],ylims[0])
