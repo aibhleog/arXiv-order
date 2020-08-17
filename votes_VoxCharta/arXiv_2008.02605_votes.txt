@@ -1,3 +1,2 @@
 cast_date	cast_time
 08/07/2020	2:39pm
-08/07/2020	7:07pm
