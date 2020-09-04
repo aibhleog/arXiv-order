@@ -1,0 +1,3 @@
+cast_date	cast_time
+08/28/2020	2:21am
+08/31/2020	9:59pm
