@@ -47,7 +47,6 @@ df = df.append(df_6months,ignore_index=True)
 df.drop_duplicates(inplace=True,subset='id',keep='first')
 df.reset_index(inplace=True,drop=True)
 df = df.astype(df_dtypes)
-print(f'\nLength of final table:\t{len(df)}')
 
 
 # ----------------------- #
@@ -75,5 +74,5 @@ else:
 
 
 df.to_csv('benty-fields_voting-crossover.txt',sep='\t',index=False)
-print('Final table saved')
+print('\nFinal table saved')
 
