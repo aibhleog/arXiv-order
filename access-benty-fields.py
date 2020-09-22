@@ -12,10 +12,6 @@ NOTES:
 		3) "last year" not an option
 		
 THOUGHT: how new is benty-fields?
-what if I have a large for loop that sorts "most popular" based upon 
-"last week", "last month", AND "last 6 months"?
--- would be 3 separate dataframes saved
--- could make final dataframe that logs overlap between the 4?  Or maybe has all of the arxiv IDs and then marks which dataframes they are logged in (like if the same arxiv ID is found in "last week" and "last month" then it can be marked as such)
 '''
 
 from selenium import webdriver
