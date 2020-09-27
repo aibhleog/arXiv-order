@@ -14,4 +14,4 @@ Notes to get things to run:
 * If that doesn't work, also place a copy of it in your `/usr/bin/`
 
 ## NOTE: VoxCharta will no longer pull arXiv postings on 31 December 2020
-![announcement by James Guillochon](official_VoxCharta_announcement.png)
+![announcement by James Guillochon](official_VoxCharta_annoucement.png)
