@@ -1,8 +1,6 @@
 # arXiv-order
 Some code I'm writing to pursue a theory about arXiv.
 
-## NOTE: VoxCharta will no longer pull arXiv postings on 31 December 2020. 
-
 Future plans
 -----------
 * Need to think of a way to automate this process (get it to run daily?)
@@ -14,3 +12,6 @@ Notes to get things to run:
 * Make sure they they are also matching 64 bit or 32 bit (whatever is necessary for your computer)
 * Add the `geckodriver` executable location to your `$PATH` OR place it in `/usr/local/bin`
 * If that doesn't work, also place a copy of it in your `/usr/bin/`
+
+## NOTE: VoxCharta will no longer pull arXiv postings on 31 December 2020
+![announcement by James Guillochon](official_VoxCharta_announcement.png)
