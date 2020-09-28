@@ -108,7 +108,9 @@ for arXiv_id in arXiv_ids:
 		result = results[-2] # This 2nd to last <h3> tag is the first post
 		
 		# first checking that there isn't just 1 post that is the replacement
-		replacement_only = result.find_element_by_tag_name("a")
+		try: replacement_only = result.find_element_by_tag_name("a")
+		except: time.sleep(4); replacement_only = result.find_element_by_tag_name("a")
+		
 		if replacement_only.text[-13:] == '[Replacement]':
 			print('Original post not searchable?')
 			no_votes = -99 # so I know which ones don't come up in the search
