@@ -1,0 +1,11 @@
+id	total_votes	vote_rate
+2004.00242	2	votes_VoxCharta/arXiv_2004.00242_votes.txt
+2004.00254	0	
+2004.00257	0	
+2004.00322	2	votes_VoxCharta/arXiv_2004.00322_votes.txt
+2004.00339	0	
+2004.00346	0	
+2004.00355	2	votes_VoxCharta/arXiv_2004.00355_votes.txt
+2004.00400	6	votes_VoxCharta/arXiv_2004.00400_votes.txt
+2004.00441	2	votes_VoxCharta/arXiv_2004.00441_votes.txt
+2004.00454	0	

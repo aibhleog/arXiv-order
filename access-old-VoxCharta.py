@@ -1,10 +1,11 @@
 '''
-Script used to pull voting information from VoxCharta.org.
+Script used to pull voting information from old papers via VoxCharta.org.
 Accessed via the tamu.voxcharta.org platform.
 
-Have added code accounting for the few posts that aren't
-searchable, but DO exist on VoxCharta.  Also added code to 
-choose the original post, should replacement posts also exist.
+NOTES:  VoxCharta started up in 2009... so as long as the
+		papers we search are after 2009, they should exist.
+		HOWEVER, have also added code to account for the weird
+		few posts that aren't searchable (but do exist)
 '''
 
 from selenium import webdriver
@@ -20,31 +21,41 @@ __author__ = 'Taylor Hutchison'
 __email__ = 'aibhleog@tamu.edu'
 
 # amount of time to wait
-timeit = input('\nTime before closing browser (in seconds):  ') # seconds
-timeit = int(timeit)
+timeit = 2
+
+# amount of time to wait
+start_date = input('\nStarting search date (in YYYY-MM):  ') # from date
+print(f'Date chosen is: {start_date}') 
+
+end_date = input('\nEnd search date (in YYYY-MM):  ') # from date
+if end_date == '': end_date = '2020-05' # when I started pull from astro-ph/new, 2020-05-06
+print(f'Date chosen is: {end_date}') 
+
+# converting them to datetime variables
+start_date = dt.strptime(start_date,'%Y-%m')
+end_date = dt.strptime(end_date,'%Y-%m')
+
 
 # ------------------------ #
 # -- creating dataframe -- #
 # ------------------------ #
 df_dtypes = {'order':int,'id':str,'date':str}
-main_df = pd.read_csv('arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table of data
+main_df = pd.read_csv('old_arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table of data
 # total votes will be counted and, if possible, will track # of votes per day/week
 df = pd.DataFrame({'id':[],'total_votes':[],'vote_rate':[]}) # dataframe to be created in script
 
 # arXiv IDs to run through; note that you can query specific dates or other sorting criteria
-#arXiv_ids = main_df.id.values # runs through full list
-# unless uncommented above, will be specifying to only look at posts within the last 2 weeks
-times = [dt.strptime(t,'%d %b %y') for t in main_df.date.values]
+#arXiv_ids = main_df.id.values[:10] # runs through full list
+# unless uncommented above, will be specifying ranges
+times = [dt.strptime(t,'%d %B %Y') for t in main_df.date.values]
 times = np.asarray(times) # useful for the sorting we'll do 
 
-# reference date of 2 weeks ago
-ref_date = dt.now() - timedelta(days=14)
-print(f"Looking at posts from {dt.strftime(ref_date,'%a, %d %b %y')} and onwards.",end='\n\n')
+indexing = np.arange(len(times))
+indexing = indexing[(start_date < times)&(times < end_date)] # choosing time range
 
-indexing = np.arange(len(main_df)) 
-indexing = indexing[times > ref_date] # only listing entries in the dataframe that are in the last 2 weeks
+arXiv_ids = main_df.id.values[indexing]
+print(f'Will be looking at {len(arXiv_ids)} IDs...',end='\n\n')
 
-arXiv_ids = main_df.loc[indexing,'id'].values # IDs of posts within the last 2 weeks!
 # ------------------------ #
 
 logmein = False # option to log into VoxCharta account (note: currently broken)
@@ -78,12 +89,9 @@ else:
 	driver.get("https://tamu.voxcharta.org/")
 
 
-# not necessary but keeping anyway
-#otherints = driver.find_element_by_name("show_everyone") # so can see all upvotes
-#if otherints.is_selected() == False: 
-#	otherints.click()
-#	print("Now showing votes from all institutions.")
-
+# adding a timer to this to see how long it takes
+start_it = dt.now()
+print('Starting timer', start_it,end='\n\n')
 
 for arXiv_id in arXiv_ids:
 	assert len(arXiv_id) == 10, f"Incorrect arXiv ID: {arXiv_id}."
@@ -104,11 +112,13 @@ for arXiv_id in arXiv_ids:
 		results = driver.find_elements_by_tag_name("h3") # looks at all h3 tags (b/c replacement posts)
 	
 	if len(results) > 1: # if there's no search result, this will be length == 1
-		# choosing the first posted, corrects for [REPLACEMENT] posts that will be top of the search results
-		result = results[-2] # This 2nd to last <h3> tag is the first post
-		
+		# choosing the first one
+		result = results[-2]
+	
 		# first checking that there isn't just 1 post that is the replacement
-		replacement_only = result.find_element_by_tag_name("a")
+		try: replacement_only = result.find_element_by_tag_name("a")
+		except: time.sleep(4); replacement_only = result.find_element_by_tag_name("a")
+		
 		if replacement_only.text[-13:] == '[Replacement]':
 			print('Original post not searchable?')
 			no_votes = -99 # so I know which ones don't come up in the search
@@ -150,7 +160,7 @@ for arXiv_id in arXiv_ids:
 				filler_df = pd.DataFrame({'id':[arXiv_id],'total_votes':[0],\
 					'vote_rate':[f'']})
 				df = df.append(filler_df,ignore_index=True)
-
+		
 	else:
 		print('Not searchable?')
 		no_votes = -99 # so I know which ones don't come up in the search
@@ -158,6 +168,8 @@ for arXiv_id in arXiv_ids:
 		filler_df = pd.DataFrame({'id':[arXiv_id],'total_votes':[no_votes],\
 			'vote_rate':[f'']})
 		df = df.append(filler_df,ignore_index=True)
+		
+print('\nThat took:',dt.now()-start_it,f'for {len(arXiv_ids)} IDs')
 
 # Wait until before closing browser (so we can see the "pycon" search)
 time.sleep(timeit)
@@ -166,7 +178,7 @@ driver.close()
 
 # saving dataframe
 df_dtypes = {'id':str,'total_votes':int,'vote_rate':str}
-sub_df = pd.read_csv('VoxCharta_voting.txt',sep='\t',dtype=df_dtypes) # reading in to add
+sub_df = pd.read_csv('old_VoxCharta_voting.txt',sep='\t',dtype=df_dtypes) # reading in to add
 df = df.astype(df_dtypes) # to make sure column dtypes don't change
 
 # appending on data
@@ -184,7 +196,7 @@ else:
 	print(f'\nNo duplicates, check passed.')
 	
 # final version with added VoxCharta votes
-final_df.to_csv('VoxCharta_voting.txt',sep='\t',index=False)
+final_df.to_csv('old_VoxCharta_voting.txt',sep='\t',index=False)
 
 
 

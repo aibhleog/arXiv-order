@@ -6,6 +6,8 @@ by about half a day (because it's the submission date; announcement date doesn't
 Reads in the table that already exists with data from previous dates, adds on the
 new data compiled in this script.  In case this script is run more than one per
 day, it also searches for duplicates and drops them.
+
+only searches to 50 pages.
 '''
 
 from selenium import webdriver
@@ -23,17 +25,17 @@ __email__ = 'aibhleog@tamu.edu'
 # amount of time to wait
 start_date = input('\nStarting search date (in YYYY-MM):  ') # from date
 print(f'Date chosen is: {start_date}') 
-#end_date = input('\nEnd search date (in YYYY-MM):  ') # from date
-end_date = '2020-05-06' # when I started pull from astro-ph/new
+
+end_date = input('\nEnd search date (in YYYY-MM):  ') # from date
+if end_date == '': end_date = '2020-05-06' # when I started pull from astro-ph/new
 print(f'Date chosen is: {end_date}') 
 
 
 # ------------------------ #
 # -- creating dataframe -- #
 # ------------------------ #
-df_dtypes = {'order':int,'id':str,'sub_date':str}
+df_dtypes = {'order':int,'id':str,'date':str}
 #main_df = pd.read_csv('arXiv_posts.txt',sep='\t',dtype=df_dtypes) # main table of data
-df = pd.DataFrame({'order':[],'id':[],'sub_date':[]}) # dataframe to be created in script
 
 # ------------------------ #
 
@@ -165,7 +167,7 @@ driver.close()
 # -- saving dataframe -- #
 # ---------------------- #
 # saving dataframe
-df_dtypes = {'order':int,'id':str,'sub_date':str}
+df_dtypes = {'order':int,'id':str,'date':str}
 sub_df = pd.read_csv('old_arXiv_posts.txt',sep='\t',dtype=df_dtypes) # reading in to add
 df = df.astype(df_dtypes) # to make sure column dtypes don't change
 
