@@ -116,7 +116,7 @@ Looking at Most Popular: {freq}
 			
 			# total votes
 			votes = item.find_element_by_tag_name("h3").text
-			votes = votes.rsplit('Votes ')[1].rsplit(') ')[0] # pulling out just vote count
+			votes = votes.rsplit('Votes ')[1].rsplit(')')[0] # pulling out just vote count
 			votes = int(votes) # just because
 			print(f"{votes} votes")
 
@@ -133,7 +133,7 @@ Looking at Most Popular: {freq}
 	# saving dataframe
 	freq_dash = freq.replace(' ','-')
 	df_dtypes = {'id':str,'total_votes':int}
-	sub_df = pd.read_csv(f'benty-fields_voting-{freq_dash}.txt',sep='\t',dtype=df_dtypes) # reading in to add
+	sub_df = pd.read_csv(f'votes_benty-fields/benty-fields_voting-{freq_dash}.txt',sep='\t',dtype=df_dtypes) # reading in to add
 	df = df.astype(df_dtypes) # to make sure column dtypes don't change
 
 	# appending on data
@@ -150,7 +150,7 @@ Looking at Most Popular: {freq}
 	else:
 		print(f'\nNo duplicates, check passed.')
 	
-	final_df.to_csv(f'benty-fields_voting-{freq_dash}.txt',sep='\t',index=False)
+	final_df.to_csv(f'votes_benty-fields/benty-fields_voting-{freq_dash}.txt',sep='\t',index=False)
 	print(f"\nData saved to 'benty-fields_voting-{freq_dash}.txt'",end='\n\n')
 	
 # Wait until before closing browser (so we can see the "pycon" search)

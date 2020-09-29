@@ -22,14 +22,14 @@ __email__ = 'aibhleog@tamu.edu'
 # -- creating dataframe -- #
 # ------------------------ #
 df_dtypes = {'id':str,'last-week':bool,'last-month':bool,'last-6-months':bool}
-sub_df = pd.read_csv('benty-fields_voting-crossover.txt',sep='\t',dtype=df_dtypes)
+sub_df = pd.read_csv('votes_benty-fields/benty-fields_voting-crossover.txt',sep='\t',dtype=df_dtypes)
 
 freq = ['last-week','last-month','last-6-months']
 df_dtypes = {'id':str,'total_votes':int}
 
-df_week = pd.read_csv(f'benty-fields_voting-{freq[0]}.txt',sep='\t',dtype=df_dtypes)
-df_month = pd.read_csv(f'benty-fields_voting-{freq[1]}.txt',sep='\t',dtype=df_dtypes)
-df_6months = pd.read_csv(f'benty-fields_voting-{freq[2]}.txt',sep='\t',dtype=df_dtypes)
+df_week = pd.read_csv(f'votes_benty-fields/benty-fields_voting-{freq[0]}.txt',sep='\t',dtype=df_dtypes)
+df_month = pd.read_csv(f'votes_benty-fields/benty-fields_voting-{freq[1]}.txt',sep='\t',dtype=df_dtypes)
+df_6months = pd.read_csv(f'votes_benty-fields/benty-fields_voting-{freq[2]}.txt',sep='\t',dtype=df_dtypes)
 
 i = 0
 for table in [df_week,df_month,df_6months]:
@@ -73,6 +73,6 @@ else:
 	print(f'\nNo duplicates, check passed.')
 
 
-df.to_csv('benty-fields_voting-crossover.txt',sep='\t',index=False)
+df.to_csv('votes_benty-fields/benty-fields_voting-crossover.txt',sep='\t',index=False)
 print('\nFinal table saved')
 
