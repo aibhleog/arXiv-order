@@ -1,6 +1,13 @@
 # arXiv-order
 Some code I'm writing to pursue a theory about arXiv.
 
+General Notes
+-----------
+* don't use arxiv.org for the data harvesting -- use their copy site, export.arxiv.org (or you'll eventually get denied access to arXiv because you're hogging the resources)
+* VoxCharta started *around* 2009?
+* when did Benty-Fields start?
+
+
 Future plans
 -----------
 * Need to think of a way to automate this process (get it to run daily?)
