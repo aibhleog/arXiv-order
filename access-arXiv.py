@@ -29,7 +29,7 @@ df = pd.DataFrame({'order':[],'id':[],'date':[]}) # dataframe to be created in s
 
 # opening browser & going to arXiv.org
 driver = webdriver.Firefox()
-driver.get("https://arxiv.org/list/astro-ph/new")
+driver.get("https://export.arxiv.org/list/astro-ph/new")
 
 date = driver.find_element_by_tag_name("h3") # expecting "New submissions for ___, DD dd YY"
 date = date.text.split(', ')[1] # just pulling out the date part
@@ -49,7 +49,7 @@ for item in items:
 	list_id = item.find_element_by_class_name("list-identifier")
 	post_order = list_id.find_element_by_tag_name("a")
 	arxiv_id = post_order.get_attribute('href')
-	arxiv_id = arxiv_id.lstrip('https://arxiv.org/abs/')
+	arxiv_id = arxiv_id.lstrip('https://export.arxiv.org/abs/')
 	print(arxiv_id)
 	
 	# adding value to dataframe

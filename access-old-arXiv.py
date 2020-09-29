@@ -41,7 +41,7 @@ df_dtypes = {'order':int,'id':str,'date':str}
 
 # opening browser & going to arXiv.org
 driver = webdriver.Firefox()
-driver.get('https://arxiv.org/')
+driver.get('https://export.arxiv.org/')
 
 # Advanced Search
 print('\nOpening Advanced Search.',end='\n\n')
@@ -128,7 +128,7 @@ for j in range(pages):
 		list_id = item.find_element_by_class_name('list-title.is-inline-block')
 		post_order = list_id.find_element_by_tag_name('a')
 		arxiv_id = post_order.get_attribute('href')
-		arxiv_id = arxiv_id.lstrip('https://arxiv.org/abs/')
+		arxiv_id = arxiv_id.lstrip('https://export.arxiv.org/abs/')
 		print(arxiv_id, end=', ')
 		
 		notes = item.find_element_by_xpath('//p[@class="is-size-7"]')

@@ -32,7 +32,7 @@ arXiv_ids = main_df.query(f'date == "{date}"').id.values
 
 # opening browser & going to arXiv.org
 driver = webdriver.Firefox()
-driver.get("https://arxiv.org/")
+driver.get("https://export.arxiv.org/")
 
 # running through list of arXiv ID
 for arXiv_id in arXiv_ids:

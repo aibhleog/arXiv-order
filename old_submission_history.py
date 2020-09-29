@@ -7,7 +7,7 @@ Future additions: would love to include author count & names (to track multiple 
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from datetime import datetime
+from datetime import datetime as dt
 import threading, time, getpass, sys, subprocess
 import pandas as pd
 import numpy as np
@@ -27,13 +27,21 @@ df = pd.DataFrame({'id':[],'v1':[],'v2':[]}) # dataframe to be created in script
 # arXiv IDs to run through
 # note that you can query specific posting dates or other sorting criteria
 #arXiv_ids = main_df.query(f'date == "{date}"').id.values
-arXiv_ids = main_df.id.values
+arXiv_ids = main_df.id.values[100:5000]
 
 # ------------------------ #
 
 # opening browser & going to arXiv.org
 driver = webdriver.Firefox()
-driver.get("https://arxiv.org/")
+driver.get("https://export.arxiv.org/")
+
+
+# starting ID & ending ID (so I can gauge when it should end)
+print(f'Starting ID: \t{arXiv_ids[0]}\nEnding ID: \t{arXiv_ids[-1]}.',end='\n\n')
+
+# adding a timer to this to see how long it takes
+start_it = dt.now()
+print('Starting timer', start_it,end='\n\n')
 
 # running through list of arXiv ID
 for arXiv_id in arXiv_ids:
@@ -62,6 +70,8 @@ for arXiv_id in arXiv_ids:
 	if len(submission) < 2: submission.append('') # in case only one submission
 	filler_df = pd.DataFrame({'id':[arXiv_id],'v1':[submission[0]],'v2':[submission[1]]})
 	df = df.append(filler_df,ignore_index=True)
+
+print('\nThat took:',dt.now()-start_it,f'for {len(arXiv_ids)} IDs')
 
 
 # Wait 2 seconds before closing browser 
