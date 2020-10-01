@@ -27,7 +27,7 @@ df = pd.DataFrame({'id':[],'v1':[],'v2':[]}) # dataframe to be created in script
 # arXiv IDs to run through
 # note that you can query specific posting dates or other sorting criteria
 #arXiv_ids = main_df.query(f'date == "{date}"').id.values
-arXiv_ids = main_df.id.values[100:5000]
+arXiv_ids = main_df.id.values[5000:6000]
 
 # ------------------------ #
 
@@ -49,12 +49,27 @@ for arXiv_id in arXiv_ids:
 	
 	# locating search bar and inputting arXiv_id
 	search = driver.find_element_by_name("query")
+	search.clear()
 	search.send_keys(arXiv_id)
 	search.send_keys(Keys.RETURN)
 
 	time.sleep(7) # have to pause so the code doesn't try to search on previous page 
 	print(f'\nFinding submission time for {arXiv_id}')
-	submission_history = driver.find_element_by_class_name("submission-history")
+	try: submission_history = driver.find_element_by_class_name("submission-history")
+	except: 
+		try: # this is annoying
+			time.sleep(5)
+			submission_history = driver.find_element_by_class_name("submission-history")
+		except: # if for some reason it decides it can't load the page, we'll start over
+			driver.get("https://export.arxiv.org/")
+			# locating search bar and inputting arXiv_id
+			search = driver.find_element_by_name("query")
+			search.clear()
+			search.send_keys(arXiv_id)
+			search.send_keys(Keys.RETURN)
+			time.sleep(7) # have to pause so the code doesn't try to search on previous page 
+			submission_history = driver.find_element_by_class_name("submission-history")
+	
 	submission_history = submission_history.text # full submission history
 	#print(submission_history)
 
