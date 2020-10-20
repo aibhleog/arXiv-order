@@ -5809,7 +5809,7 @@ id	total_votes	vote_rate
 2010.01431	1	votes_VoxCharta/arXiv_2010.01431_votes.txt
 2010.01443	0	
 2010.01452	0	
-2010.01466	1	votes_VoxCharta/arXiv_2010.01466_votes.txt
+2010.01466	2	votes_VoxCharta/arXiv_2010.01466_votes.txt
 2010.01489	0	
 2010.01527	0	
 2010.01531	1	votes_VoxCharta/arXiv_2010.01531_votes.txt
@@ -5853,20 +5853,20 @@ id	total_votes	vote_rate
 2010.02189	2	votes_VoxCharta/arXiv_2010.02189_votes.txt
 2010.02197	0	
 2010.02202	5	votes_VoxCharta/arXiv_2010.02202_votes.txt
-2010.02212	4	votes_VoxCharta/arXiv_2010.02212_votes.txt
+2010.02212	5	votes_VoxCharta/arXiv_2010.02212_votes.txt
 2010.02214	0	
 2010.02215	0	
 2010.02219	6	votes_VoxCharta/arXiv_2010.02219_votes.txt
 2010.02220	0	
 2010.02222	5	votes_VoxCharta/arXiv_2010.02222_votes.txt
 2010.02226	0	
-2010.02227	0	
+2010.02227	1	votes_VoxCharta/arXiv_2010.02227_votes.txt
 2010.02230	0	
 2010.02231	0	
 2010.02233	0	
 2010.02234	0	
 2010.02235	0	
-2010.02242	1	votes_VoxCharta/arXiv_2010.02242_votes.txt
+2010.02242	2	votes_VoxCharta/arXiv_2010.02242_votes.txt
 2010.02245	11	votes_VoxCharta/arXiv_2010.02245_votes.txt
 2010.02248	1	votes_VoxCharta/arXiv_2010.02248_votes.txt
 2010.02249	1	votes_VoxCharta/arXiv_2010.02249_votes.txt
@@ -5905,7 +5905,7 @@ id	total_votes	vote_rate
 2010.02687	0	
 2010.02710	6	votes_VoxCharta/arXiv_2010.02710_votes.txt
 2010.02718	0	
-2010.02723	2	votes_VoxCharta/arXiv_2010.02723_votes.txt
+2010.02723	3	votes_VoxCharta/arXiv_2010.02723_votes.txt
 2010.02757	0	
 2010.02767	0	
 2010.02786	0	
@@ -5928,10 +5928,10 @@ id	total_votes	vote_rate
 2010.02928	0	
 2010.02929	1	votes_VoxCharta/arXiv_2010.02929_votes.txt
 2010.02932	3	votes_VoxCharta/arXiv_2010.02932_votes.txt
-2010.02935	6	votes_VoxCharta/arXiv_2010.02935_votes.txt
+2010.02935	8	votes_VoxCharta/arXiv_2010.02935_votes.txt
 2010.02936	2	votes_VoxCharta/arXiv_2010.02936_votes.txt
 2010.02937	3	votes_VoxCharta/arXiv_2010.02937_votes.txt
-2010.02940	8	votes_VoxCharta/arXiv_2010.02940_votes.txt
+2010.02940	11	votes_VoxCharta/arXiv_2010.02940_votes.txt
 2010.02942	7	votes_VoxCharta/arXiv_2010.02942_votes.txt
 2010.02944	0	
 2010.02945	0	
@@ -5946,7 +5946,7 @@ id	total_votes	vote_rate
 2010.03038	0	
 2010.03041	2	votes_VoxCharta/arXiv_2010.03041_votes.txt
 2010.03089	0	
-2010.03139	1	votes_VoxCharta/arXiv_2010.03139_votes.txt
+2010.03139	2	votes_VoxCharta/arXiv_2010.03139_votes.txt
 2010.03143	0	
 2010.03225	0	
 2010.03234	0	
@@ -5960,7 +5960,7 @@ id	total_votes	vote_rate
 2010.03383	0	
 2010.03453	0	
 2010.03470	0	
-2010.03477	6	votes_VoxCharta/arXiv_2010.03477_votes.txt
+2010.03477	7	votes_VoxCharta/arXiv_2010.03477_votes.txt
 2010.03488	1	votes_VoxCharta/arXiv_2010.03488_votes.txt
 2010.03491	0	
 2010.03507	0	
@@ -5970,11 +5970,11 @@ id	total_votes	vote_rate
 2010.03539	2	votes_VoxCharta/arXiv_2010.03539_votes.txt
 2010.03555	7	votes_VoxCharta/arXiv_2010.03555_votes.txt
 2010.03564	0	
-2010.03566	7	votes_VoxCharta/arXiv_2010.03566_votes.txt
-2010.03567	9	votes_VoxCharta/arXiv_2010.03567_votes.txt
+2010.03566	8	votes_VoxCharta/arXiv_2010.03566_votes.txt
+2010.03567	10	votes_VoxCharta/arXiv_2010.03567_votes.txt
 2010.03570	0	
 2010.03576	0	
-2010.03579	18	votes_VoxCharta/arXiv_2010.03579_votes.txt
+2010.03579	20	votes_VoxCharta/arXiv_2010.03579_votes.txt
 2010.03581	0	
 2010.03582	2	votes_VoxCharta/arXiv_2010.03582_votes.txt
 2010.03610	2	votes_VoxCharta/arXiv_2010.03610_votes.txt
@@ -5982,8 +5982,8 @@ id	total_votes	vote_rate
 2010.03634	1	votes_VoxCharta/arXiv_2010.03634_votes.txt
 2010.03650	0	
 2010.03654	2	votes_VoxCharta/arXiv_2010.03654_votes.txt
-2010.03657	2	votes_VoxCharta/arXiv_2010.03657_votes.txt
-2010.03668	0	
+2010.03657	3	votes_VoxCharta/arXiv_2010.03657_votes.txt
+2010.03668	1	votes_VoxCharta/arXiv_2010.03668_votes.txt
 2010.03693	0	
 2010.03695	0	
 2010.03704	0	
@@ -6018,23 +6018,23 @@ id	total_votes	vote_rate
 2010.04158	2	votes_VoxCharta/arXiv_2010.04158_votes.txt
 2010.04162	0	
 2010.04163	0	
-2010.04164	2	votes_VoxCharta/arXiv_2010.04164_votes.txt
-2010.04165	0	
-2010.04166	3	votes_VoxCharta/arXiv_2010.04166_votes.txt
+2010.04164	3	votes_VoxCharta/arXiv_2010.04164_votes.txt
+2010.04165	2	votes_VoxCharta/arXiv_2010.04165_votes.txt
+2010.04166	8	votes_VoxCharta/arXiv_2010.04166_votes.txt
 2010.04167	0	
-2010.04169	2	votes_VoxCharta/arXiv_2010.04169_votes.txt
+2010.04169	4	votes_VoxCharta/arXiv_2010.04169_votes.txt
 2010.04170	0	
 2010.04174	0	
 2010.04176	0	
-2010.04177	0	
-2010.04178	2	votes_VoxCharta/arXiv_2010.04178_votes.txt
-2010.04180	2	votes_VoxCharta/arXiv_2010.04180_votes.txt
-2010.04182	0	
+2010.04177	1	votes_VoxCharta/arXiv_2010.04177_votes.txt
+2010.04178	3	votes_VoxCharta/arXiv_2010.04178_votes.txt
+2010.04180	3	votes_VoxCharta/arXiv_2010.04180_votes.txt
+2010.04182	1	votes_VoxCharta/arXiv_2010.04182_votes.txt
 2010.04184	0	
 2010.04192	0	
 2010.04206	0	
-2010.04214	1	votes_VoxCharta/arXiv_2010.04214_votes.txt
-2010.04217	0	
+2010.04214	2	votes_VoxCharta/arXiv_2010.04214_votes.txt
+2010.04217	1	votes_VoxCharta/arXiv_2010.04217_votes.txt
 2010.04221	0	
 2010.04229	0	
 2010.04234	1	votes_VoxCharta/arXiv_2010.04234_votes.txt
@@ -6045,25 +6045,281 @@ id	total_votes	vote_rate
 2010.04255	0	
 2010.04289	0	
 2010.04338	0	
-2010.04356	0	
-2010.04417	3	votes_VoxCharta/arXiv_2010.04417_votes.txt
+2010.04356	1	votes_VoxCharta/arXiv_2010.04356_votes.txt
+2010.04417	5	votes_VoxCharta/arXiv_2010.04417_votes.txt
 2010.04419	0	
 2010.04431	0	
-2010.04442	1	votes_VoxCharta/arXiv_2010.04442_votes.txt
+2010.04442	6	votes_VoxCharta/arXiv_2010.04442_votes.txt
 2010.04455	1	votes_VoxCharta/arXiv_2010.04455_votes.txt
 2010.04461	0	
 2010.04479	0	
-2010.04498	0	
+2010.04498	3	votes_VoxCharta/arXiv_2010.04498_votes.txt
 2010.04500	0	
-2010.04567	0	
+2010.04567	2	votes_VoxCharta/arXiv_2010.04567_votes.txt
 2010.04587	1	votes_VoxCharta/arXiv_2010.04587_votes.txt
 2010.04620	1	votes_VoxCharta/arXiv_2010.04620_votes.txt
 2010.04629	0	
 2010.04632	0	
-2010.04655	0	
+2010.04655	1	votes_VoxCharta/arXiv_2010.04655_votes.txt
 2010.04656	0	
 2010.04664	0	
-2010.04685	5	votes_VoxCharta/arXiv_2010.04685_votes.txt
+2010.04685	6	votes_VoxCharta/arXiv_2010.04685_votes.txt
 2010.04698	2	votes_VoxCharta/arXiv_2010.04698_votes.txt
 2010.04710	0	
-2010.04716	0	
+2010.04716	2	votes_VoxCharta/arXiv_2010.04716_votes.txt
+2010.04724	-99	
+2010.04725	-99	
+2010.04728	0	
+2010.04733	-99	
+2010.04734	-99	
+2010.04737	-99	
+2010.04741	12	votes_VoxCharta/arXiv_2010.04741_votes.txt
+2010.04764	0	
+2010.04765	0	
+2010.04796	0	
+2010.04797	0	
+2010.04798	2	votes_VoxCharta/arXiv_2010.04798_votes.txt
+2010.04810	0	
+2010.04813	1	votes_VoxCharta/arXiv_2010.04813_votes.txt
+2010.04825	0	
+2010.04832	4	votes_VoxCharta/arXiv_2010.04832_votes.txt
+2010.04866	2	votes_VoxCharta/arXiv_2010.04866_votes.txt
+2010.04938	0	
+2010.04944	0	
+2010.04972	2	votes_VoxCharta/arXiv_2010.04972_votes.txt
+2010.04981	1	votes_VoxCharta/arXiv_2010.04981_votes.txt
+2010.05012	0	
+2010.05034	6	votes_VoxCharta/arXiv_2010.05034_votes.txt
+2010.05046	0	
+2010.05064	1	votes_VoxCharta/arXiv_2010.05064_votes.txt
+2010.05071	0	
+2010.05072	3	votes_VoxCharta/arXiv_2010.05072_votes.txt
+2010.05082	0	
+2010.05095	1	votes_VoxCharta/arXiv_2010.05095_votes.txt
+2010.05097	0	
+2010.05108	0	
+2010.05128	5	votes_VoxCharta/arXiv_2010.05128_votes.txt
+2010.05145	0	
+2010.05151	0	
+2010.05158	0	
+2010.05160	0	
+2010.05218	0	
+2010.05232	0	
+2010.05289	0	
+2010.05304	1	votes_VoxCharta/arXiv_2010.05304_votes.txt
+2010.05392	0	
+2010.05403	2	votes_VoxCharta/arXiv_2010.05403_votes.txt
+2010.05412	1	votes_VoxCharta/arXiv_2010.05412_votes.txt
+2010.05413	0	
+2010.05422	5	votes_VoxCharta/arXiv_2010.05422_votes.txt
+2010.05487	0	
+2010.05488	0	
+2010.05509	0	
+2010.05510	11	votes_VoxCharta/arXiv_2010.05510_votes.txt
+2010.05532	1	votes_VoxCharta/arXiv_2010.05532_votes.txt
+2010.05541	0	
+2010.05551	0	
+2010.05553	0	
+2010.05576	3	votes_VoxCharta/arXiv_2010.05576_votes.txt
+2010.05577	0	
+2010.05585	0	
+2010.05591	1	votes_VoxCharta/arXiv_2010.05591_votes.txt
+2010.05597	0	
+2010.05603	0	
+2010.05606	1	votes_VoxCharta/arXiv_2010.05606_votes.txt
+2010.05615	1	votes_VoxCharta/arXiv_2010.05615_votes.txt
+2010.05624	1	votes_VoxCharta/arXiv_2010.05624_votes.txt
+2010.05650	0	
+2010.05669	0	
+2010.05706	0	
+2010.05750	0	
+2010.05765	0	
+2010.05773	0	
+2010.05791	1	votes_VoxCharta/arXiv_2010.05791_votes.txt
+2010.05795	1	votes_VoxCharta/arXiv_2010.05795_votes.txt
+2010.05800	10	votes_VoxCharta/arXiv_2010.05800_votes.txt
+2010.05806	0	
+2010.05811	0	
+2010.05816	0	
+2010.05817	0	
+2010.05824	3	votes_VoxCharta/arXiv_2010.05824_votes.txt
+2010.05825	1	votes_VoxCharta/arXiv_2010.05825_votes.txt
+2010.05832	0	
+2010.05859	3	votes_VoxCharta/arXiv_2010.05859_votes.txt
+2010.05866	0	
+2010.05869	0	
+2010.05911	0	
+2010.05914	0	
+2010.05917	0	
+2010.05918	0	
+2010.05919	6	votes_VoxCharta/arXiv_2010.05919_votes.txt
+2010.05920	2	votes_VoxCharta/arXiv_2010.05920_votes.txt
+2010.05922	3	votes_VoxCharta/arXiv_2010.05922_votes.txt
+2010.05924	1	votes_VoxCharta/arXiv_2010.05924_votes.txt
+2010.05926	1	votes_VoxCharta/arXiv_2010.05926_votes.txt
+2010.05929	0	
+2010.05930	4	votes_VoxCharta/arXiv_2010.05930_votes.txt
+2010.05934	6	votes_VoxCharta/arXiv_2010.05934_votes.txt
+2010.05939	0	
+2010.05941	1	votes_VoxCharta/arXiv_2010.05941_votes.txt
+2010.05954	0	
+2010.05956	0	
+2010.05962	2	votes_VoxCharta/arXiv_2010.05962_votes.txt
+2010.05973	0	
+2010.05974	0	
+2010.05977	0	
+2010.05978	0	
+2010.05996	4	votes_VoxCharta/arXiv_2010.05996_votes.txt
+2010.06001	0	
+2010.06012	0	
+2010.06021	0	
+2010.06048	0	
+2010.06056	0	
+2010.06064	0	
+2010.06073	1	votes_VoxCharta/arXiv_2010.06073_votes.txt
+2010.06074	2	votes_VoxCharta/arXiv_2010.06074_votes.txt
+2010.06086	0	
+2010.06094	1	votes_VoxCharta/arXiv_2010.06094_votes.txt
+2010.06109	0	
+2010.06114	0	
+2010.06118	0	
+2010.06128	3	votes_VoxCharta/arXiv_2010.06128_votes.txt
+2010.06134	0	
+2010.06161	0	
+2010.06174	0	
+2010.06179	0	
+2010.06183	1	votes_VoxCharta/arXiv_2010.06183_votes.txt
+2010.06193	0	
+2010.06205	0	
+2010.06211	1	votes_VoxCharta/arXiv_2010.06211_votes.txt
+2010.06234	2	votes_VoxCharta/arXiv_2010.06234_votes.txt
+2010.06241	8	votes_VoxCharta/arXiv_2010.06241_votes.txt
+2010.06254	1	votes_VoxCharta/arXiv_2010.06254_votes.txt
+2010.06287	2	votes_VoxCharta/arXiv_2010.06287_votes.txt
+2010.06303	1	votes_VoxCharta/arXiv_2010.06303_votes.txt
+2010.06327	0	
+2010.06337	0	
+2010.06353	0	
+2010.06368	0	
+2010.06400	0	
+2010.06419	0	
+2010.06427	0	
+2010.06433	1	votes_VoxCharta/arXiv_2010.06433_votes.txt
+2010.06434	0	
+2010.06470	0	
+2010.06480	5	votes_VoxCharta/arXiv_2010.06480_votes.txt
+2010.06485	0	
+2010.06495	0	
+2010.06514	0	
+2010.06523	2	votes_VoxCharta/arXiv_2010.06523_votes.txt
+2010.06534	0	
+2010.06535	0	
+2010.06566	0	
+2010.06573	1	votes_VoxCharta/arXiv_2010.06573_votes.txt
+2010.06589	1	votes_VoxCharta/arXiv_2010.06589_votes.txt
+2010.06590	0	
+2010.06591	0	
+2010.06596	1	votes_VoxCharta/arXiv_2010.06596_votes.txt
+2010.06603	0	
+2010.06605	6	votes_VoxCharta/arXiv_2010.06605_votes.txt
+2010.06608	6	votes_VoxCharta/arXiv_2010.06608_votes.txt
+2010.06609	0	
+2010.06612	7	votes_VoxCharta/arXiv_2010.06612_votes.txt
+2010.06614	0	
+2010.06617	9	votes_VoxCharta/arXiv_2010.06617_votes.txt
+2010.06621	1	votes_VoxCharta/arXiv_2010.06621_votes.txt
+2010.06624	0	
+2010.06632	1	votes_VoxCharta/arXiv_2010.06632_votes.txt
+2010.06635	1	votes_VoxCharta/arXiv_2010.06635_votes.txt
+2010.06638	3	votes_VoxCharta/arXiv_2010.06638_votes.txt
+2010.06670	2	votes_VoxCharta/arXiv_2010.06670_votes.txt
+2010.06680	0	
+2010.06692	2	votes_VoxCharta/arXiv_2010.06692_votes.txt
+2010.06702	0	
+2010.06708	0	
+2010.06711	0	
+2010.06725	1	votes_VoxCharta/arXiv_2010.06725_votes.txt
+2010.06748	1	votes_VoxCharta/arXiv_2010.06748_votes.txt
+2010.06766	1	votes_VoxCharta/arXiv_2010.06766_votes.txt
+2010.06787	0	
+2010.06825	1	votes_VoxCharta/arXiv_2010.06825_votes.txt
+2010.06827	0	
+2010.06884	0	
+2010.06902	4	votes_VoxCharta/arXiv_2010.06902_votes.txt
+2010.06908	1	votes_VoxCharta/arXiv_2010.06908_votes.txt
+2010.06926	0	
+2010.06928	1	votes_VoxCharta/arXiv_2010.06928_votes.txt
+2010.06934	1	votes_VoxCharta/arXiv_2010.06934_votes.txt
+2010.06936	1	votes_VoxCharta/arXiv_2010.06936_votes.txt
+2010.06949	0	
+2010.06977	0	
+2010.06979	0	
+2010.06982	0	
+2010.06983	0	
+2010.06991	0	
+2010.07032	1	votes_VoxCharta/arXiv_2010.07032_votes.txt
+2010.07034	1	votes_VoxCharta/arXiv_2010.07034_votes.txt
+2010.07049	0	
+2010.07122	0	
+2010.07132	0	
+2010.07134	0	
+2010.07136	0	
+2010.07166	2	votes_VoxCharta/arXiv_2010.07166_votes.txt
+2010.07193	0	
+2010.07235	1	votes_VoxCharta/arXiv_2010.07235_votes.txt
+2010.07241	1	votes_VoxCharta/arXiv_2010.07241_votes.txt
+2010.07273	0	
+2010.07274	0	
+2010.07281	0	
+2010.07301	0	
+2010.07302	6	votes_VoxCharta/arXiv_2010.07302_votes.txt
+2010.07303	0	
+2010.07308	6	votes_VoxCharta/arXiv_2010.07308_votes.txt
+2010.07309	3	votes_VoxCharta/arXiv_2010.07309_votes.txt
+2010.07310	5	votes_VoxCharta/arXiv_2010.07310_votes.txt
+2010.07311	7	votes_VoxCharta/arXiv_2010.07311_votes.txt
+2010.07313	3	votes_VoxCharta/arXiv_2010.07313_votes.txt
+2010.07314	0	
+2010.07315	0	
+2010.07318	2	votes_VoxCharta/arXiv_2010.07318_votes.txt
+2010.07319	0	
+2010.07321	1	votes_VoxCharta/arXiv_2010.07321_votes.txt
+2010.07323	1	votes_VoxCharta/arXiv_2010.07323_votes.txt
+2010.07324	5	votes_VoxCharta/arXiv_2010.07324_votes.txt
+2010.07333	0	
+2010.07376	1	votes_VoxCharta/arXiv_2010.07376_votes.txt
+2010.07395	9	votes_VoxCharta/arXiv_2010.07395_votes.txt
+2010.07398	0	
+2010.07419	0	
+2010.07443	4	votes_VoxCharta/arXiv_2010.07443_votes.txt
+2010.07457	1	votes_VoxCharta/arXiv_2010.07457_votes.txt
+2010.07481	1	votes_VoxCharta/arXiv_2010.07481_votes.txt
+2010.07482	0	
+2010.07512	1	votes_VoxCharta/arXiv_2010.07512_votes.txt
+2010.07527	1	votes_VoxCharta/arXiv_2010.07527_votes.txt
+2010.07535	0	
+2010.07545	3	votes_VoxCharta/arXiv_2010.07545_votes.txt
+2010.07553	0	
+2010.07589	0	
+2010.07593	1	votes_VoxCharta/arXiv_2010.07593_votes.txt
+2010.07598	0	
+2010.07616	1	votes_VoxCharta/arXiv_2010.07616_votes.txt
+2010.07622	1	votes_VoxCharta/arXiv_2010.07622_votes.txt
+2010.07623	0	
+2010.07673	0	
+2010.07692	0	
+2010.07699	0	
+2010.07715	0	
+2010.07718	1	votes_VoxCharta/arXiv_2010.07718_votes.txt
+2010.07742	1	votes_VoxCharta/arXiv_2010.07742_votes.txt
+2010.07749	1	votes_VoxCharta/arXiv_2010.07749_votes.txt
+2010.07776	0	
+2010.07796	2	votes_VoxCharta/arXiv_2010.07796_votes.txt
+2010.07797	0	
+2010.07812	2	votes_VoxCharta/arXiv_2010.07812_votes.txt
+2010.07814	2	votes_VoxCharta/arXiv_2010.07814_votes.txt
+2010.07817	3	votes_VoxCharta/arXiv_2010.07817_votes.txt
+2010.07822	0	
+2010.07851	3	votes_VoxCharta/arXiv_2010.07851_votes.txt
+2010.07932	2	votes_VoxCharta/arXiv_2010.07932_votes.txt
+2010.07934	3	votes_VoxCharta/arXiv_2010.07934_votes.txt
