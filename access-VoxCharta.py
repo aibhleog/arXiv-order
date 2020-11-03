@@ -90,7 +90,8 @@ for arXiv_id in arXiv_ids:
 	print(f'\nSearching for {arXiv_id}.')
 
 	# now, finding the search bar and searching for paper title
-	search = driver.find_element_by_id("searchbox")
+	try: search = driver.find_element_by_id("searchbox")
+	except: time.sleep(7); search = driver.find_element_by_id("searchbox")
 	search.clear()
 	search.send_keys(arXiv_id)
 	submit = driver.find_element_by_class_name("go")
@@ -109,7 +110,21 @@ for arXiv_id in arXiv_ids:
 		
 		# first checking that there isn't just 1 post that is the replacement
 		try: replacement_only = result.find_element_by_tag_name("a")
-		except: time.sleep(4); replacement_only = result.find_element_by_tag_name("a")
+		except: # for some reason this has been failing recently
+			try: time.sleep(4); replacement_only = result.find_element_by_tag_name("a")
+			except: # if for some reason it decides it can't find it, we'll start over
+				driver.get("https://tamu.voxcharta.org/")
+				# locating search bar and inputting arXiv_id
+				search = driver.find_element_by_id("searchbox")
+				search.clear()
+				search.send_keys(arXiv_id)
+				submit = driver.find_element_by_class_name("go")
+				submit.click()
+			
+				time.sleep(5) # have to pause so the code doesn't try to search on previous page 
+				results = driver.find_elements_by_tag_name("h3") # looks at all h3 tags (b/c replacement posts)
+				result = results[-2]
+				replacement_only = result.find_element_by_tag_name("a")
 		
 		if replacement_only.text[-13:] == '[Replacement]':
 			print('Original post not searchable?')
