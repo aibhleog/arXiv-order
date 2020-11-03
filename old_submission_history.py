@@ -27,7 +27,7 @@ df = pd.DataFrame({'id':[],'v1':[],'v2':[]}) # dataframe to be created in script
 # arXiv IDs to run through
 # note that you can query specific posting dates or other sorting criteria
 #arXiv_ids = main_df.query(f'date == "{date}"').id.values
-arXiv_ids = main_df.id.values[25000:30000]
+arXiv_ids = main_df.id.values[30000:35000]
 
 # ------------------------ #
 
