@@ -114,6 +114,7 @@ for arXiv_id in arXiv_ids:
 			try: time.sleep(4); replacement_only = result.find_element_by_tag_name("a")
 			except: # if for some reason it decides it can't find it, we'll start over
 				driver.get("https://tamu.voxcharta.org/")
+				time.sleep(2)
 				# locating search bar and inputting arXiv_id
 				search = driver.find_element_by_id("searchbox")
 				search.clear()
@@ -123,8 +124,9 @@ for arXiv_id in arXiv_ids:
 			
 				time.sleep(5) # have to pause so the code doesn't try to search on previous page 
 				results = driver.find_elements_by_tag_name("h3") # looks at all h3 tags (b/c replacement posts)
-				result = results[-2]
-				replacement_only = result.find_element_by_tag_name("a")
+				if len(results) > 1:
+					result = results[-2]
+					replacement_only = result.find_element_by_tag_name("a")
 		
 		if replacement_only.text[-13:] == '[Replacement]':
 			print('Original post not searchable?')
