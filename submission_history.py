@@ -9,6 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from datetime import datetime
 import threading, time, getpass, sys, subprocess
+from datetime import datetime as dt
 import pandas as pd
 import numpy as np
 
@@ -29,6 +30,10 @@ date = main_df.loc[len(main_df)-1,'date'] # latest date, assumes "access_arXiv.p
 arXiv_ids = main_df.query(f'date == "{date}"').id.values
 
 # ------------------------ #
+
+# adding a timer to this to see how long it takes
+start_it = dt.now()
+print('Starting timer', start_it,end='\n\n')
 
 # opening browser & going to arXiv.org
 driver = webdriver.Firefox()
@@ -66,6 +71,8 @@ for arXiv_id in arXiv_ids:
 # Wait 2 seconds before closing browser 
 time.sleep(2)
 driver.close()
+
+print('\nThat took:',dt.now()-start_it,f'for {len(arXiv_ids)} IDs')
 
 # saving dataframe
 df_dtypes = {'id':str,'v1':str,'v2':str}

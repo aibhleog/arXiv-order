@@ -38,7 +38,7 @@ times = [dt.strptime(t,'%d %b %y') for t in main_df.date.values]
 times = np.asarray(times) # useful for the sorting we'll do 
 
 # reference date of 2 weeks ago
-ref_date = dt.now() - timedelta(days=14)
+ref_date = dt.now() - timedelta(days=28) # oof
 print(f"Looking at posts from {dt.strftime(ref_date,'%a, %d %b %y')} and onwards.",end='\n\n')
 
 indexing = np.arange(len(main_df)) 
@@ -48,6 +48,10 @@ arXiv_ids = main_df.loc[indexing,'id'].values # IDs of posts within the last 2 w
 # ------------------------ #
 
 logmein = False # option to log into VoxCharta account (note: currently broken)
+
+# adding a timer to this to see how long it takes
+start_it = dt.now()
+print('Starting timer', start_it,end='\n\n')
 
 # opening browser & going to VoxCharta
 driver = webdriver.Firefox()
@@ -85,23 +89,24 @@ else:
 #	print("Now showing votes from all institutions.")
 
 
+
 for arXiv_id in arXiv_ids:
 	assert len(arXiv_id) == 10, f"Incorrect arXiv ID: {arXiv_id}."
 	print(f'\nSearching for {arXiv_id}.')
 
 	# now, finding the search bar and searching for paper title
 	try: search = driver.find_element_by_id("searchbox")
-	except: time.sleep(7); search = driver.find_element_by_id("searchbox")
+	except: time.sleep(8); search = driver.find_element_by_id("searchbox")
 	search.clear()
 	search.send_keys(arXiv_id)
 	submit = driver.find_element_by_class_name("go")
 	submit.click()
 
-	time.sleep(5) # have to pause so the code doesn't try to search on previous page 	
+	time.sleep(6) # have to pause so the code doesn't try to search on previous page 	
 	# finding and clicking on result title
 	try: results = driver.find_elements_by_tag_name("h3") # looks at all h3 tags (b/c replacement posts)
 	except: 
-		time.sleep(4) # waiting a little longer for it to load	
+		time.sleep(5) # waiting a little longer for it to load	
 		results = driver.find_elements_by_tag_name("h3") # looks at all h3 tags (b/c replacement posts)
 	
 	if len(results) > 1: # if there's no search result, this will be length == 1
@@ -111,10 +116,10 @@ for arXiv_id in arXiv_ids:
 		# first checking that there isn't just 1 post that is the replacement
 		try: replacement_only = result.find_element_by_tag_name("a")
 		except: # for some reason this has been failing recently
-			try: time.sleep(4); replacement_only = result.find_element_by_tag_name("a")
+			try: time.sleep(5); replacement_only = result.find_element_by_tag_name("a")
 			except: # if for some reason it decides it can't find it, we'll start over
 				driver.get("https://tamu.voxcharta.org/")
-				time.sleep(2)
+				time.sleep(3)
 				# locating search bar and inputting arXiv_id
 				search = driver.find_element_by_id("searchbox")
 				search.clear()
@@ -122,7 +127,7 @@ for arXiv_id in arXiv_ids:
 				submit = driver.find_element_by_class_name("go")
 				submit.click()
 			
-				time.sleep(5) # have to pause so the code doesn't try to search on previous page 
+				time.sleep(6) # have to pause so the code doesn't try to search on previous page 
 				results = driver.find_elements_by_tag_name("h3") # looks at all h3 tags (b/c replacement posts)
 				if len(results) > 1:
 					result = results[-2]
@@ -138,7 +143,7 @@ for arXiv_id in arXiv_ids:
 		
 		else:
 			result.click()
-			time.sleep(5) # have to pause so the code doesn't try to search on previous page 
+			time.sleep(6) # have to pause so the code doesn't try to search on previous page 
 			# finding total votes
 			
 			try:
@@ -181,6 +186,8 @@ for arXiv_id in arXiv_ids:
 # Wait until before closing browser (so we can see the "pycon" search)
 time.sleep(timeit)
 driver.close()
+
+print('\nThat took:',dt.now()-start_it,f'for {len(arXiv_ids)} IDs')
 
 
 # saving dataframe
