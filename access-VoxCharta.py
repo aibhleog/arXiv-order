@@ -38,7 +38,7 @@ times = [dt.strptime(t,'%d %b %y') for t in main_df.date.values]
 times = np.asarray(times) # useful for the sorting we'll do 
 
 # reference date of 2 weeks ago
-ref_date = dt.now() - timedelta(days=28) # oof
+ref_date = dt.now() - timedelta(days=14) # oof
 print(f"Looking at posts from {dt.strftime(ref_date,'%a, %d %b %y')} and onwards.",end='\n\n')
 
 indexing = np.arange(len(main_df)) 
@@ -132,6 +132,7 @@ for arXiv_id in arXiv_ids:
 				if len(results) > 1:
 					result = results[-2]
 					replacement_only = result.find_element_by_tag_name("a")
+				else: replacement_only = results[0].find_element_by_tag_name("a")
 		
 		if replacement_only.text[-13:] == '[Replacement]':
 			print('Original post not searchable?')
