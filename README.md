@@ -13,9 +13,7 @@ General Notes
 Future plans
 -----------
 * Need to think of a way to automate this process (get it to run daily?)
-* In `access_VoxCharta.py`, need to add a `try...except` that flags when there is no search result returned for an arXiv number... because an alarming number of these recent posts don't seem to appear on VoxCharta.
-* Track number of votes from different institutions?  
-  
+* In `access_VoxCharta.py`, need to add a `try...except` that flags when there is no search result returned for an arXiv number... because an alarming number of these recent posts don't seem to appear on VoxCharta.  
   
 **Notes to get things to run:**
 * Make sure that your `geckodriver` executable and Firefox application are both up to date
