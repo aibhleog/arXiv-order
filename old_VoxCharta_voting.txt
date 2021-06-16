@@ -8,4 +8,3 @@ id	total_votes	vote_rate
 2004.00355	2	votes_VoxCharta/arXiv_2004.00355_votes.txt
 2004.00400	6	votes_VoxCharta/arXiv_2004.00400_votes.txt
 2004.00441	2	votes_VoxCharta/arXiv_2004.00441_votes.txt
-2004.00454	0	
